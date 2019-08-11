@@ -1,1 +1,175 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/*@import '~https://fonts.googleapis.com/icon?family=Material+Icons';*/
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+/* You can add global styles to this file, and also import other style files */
+
+label
+{
+  float: left;
+  width: 300px;
+  font-weight: bold;
+  font-size: medium;
+  /*margin-right: 1em;*/
+}
+.mat-fab {
+  margin: 5px;
+}
+
+button {
+  margin: 100px;
+}
+
+.div1 {
+  display: inline-block;
+  /*flex-wrap: nowrap;*/
+  /*float: left;*/
+}
+/*.mat-raised-button {*/
+/*margin: 100px;*/
+/*}*/
+
+.mat-checkbox {
+  /*position: relative;*/
+  /*display: block;*/
+  width: 80px;
+  height: 26px;
+  margin: 20px;
+  background: #FFF;
+  /*border: 1px solid #2E2E2E;*/
+  border-radius: 2px;
+}
+.crap {
+  font-size: medium;
+  text-align: center;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  /*background-color: DodgerBlue;*/
+}
+
+.doug {
+  margin: 10px;
+}
+
+.redtext {
+  color: red;
+}
+/*.flex-container > div {*/
+/*background-color: gray;*/
+/*width: 100px;*/
+/*margin: 10px;*/
+/*text-align: center;*/
+/*line-height: 75px;*/
+/*font-size: 30px;*/
+/*}*/
+.example-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dougexample-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  /*background-color: aqua;*/
+}
+
+.color-container {
+  background-color: orange;
+}
+/*::ng-deep .mat-card.ts-header-text {*/
+/*width: 100%;*/
+/*text-align: center;*/
+/*font-size: 100px !important;*/
+/*}*/
+
+.dude {
+  color: darkblue;
+}
+
+.shit {
+  font-size: xx-large;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+.mat-form-field {
+  /*align-self: left;*/
+  text-align: center;
+}
+
+.mat-radio-group {
+  color: darkblue;
+  font-size: x-small;
+
+}
+.mat-radio-button {
+  margin: 5px;
+}
+
+.mat-card {
+  width: 500px;
+}
+
+/*.mat-card.ts-header {*/
+/*align-items: right !important;*/
+
+/*}*/
+.mat-card-title {
+  text-align: right !important;
+  color: darkblue;
+  font-size: x-large;
+}
+
+
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 600px;
+}
+
+/*body {*/
+/*margin: 0;*/
+/*font-family: Roboto, sans-serif;*/
+/*}*/
+
+/*h3 {*/
+/*font-size : 24px;*/
+/*}*/
+
+/*mat-card.ts {*/
+/*max-width: 90%;*/
+/*margin: 2em auto;*/
+/*text-align: center;*/
+/*}*/
+
+/*mat-toolbar-row {*/
+/*justify-content: space-between;*/
+/*}*/
+
+/*!* class repeated for increased specificity *!*/
+/*.mat-form-field.mat-form-field {*/
+/*width: 50%;*/
+/*}*/
+
+
+/*.done {*/
+/*position: fixed;*/
+/*bottom: 20px;*/
+/*right: 20px;*/
+/*color: white;*/
+/*}*/
