@@ -232,7 +232,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': 'king_of_diamonds',
     'card_number': '26',
     'comments': null,
-    'object_name': 'helocopter',
+    'object_name': 'helicopter',
     'person_name': 'prince'
   },
   {

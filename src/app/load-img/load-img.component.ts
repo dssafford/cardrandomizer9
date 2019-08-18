@@ -20,6 +20,8 @@ import {WrongAnswer} from '../model/wrongAnswer';
 export class LoadImgComponent implements OnInit {
 
     imgsrc = ''; //'assets/images/2_of_hearts.png';
+    bkgsrc = 'assets/images/bg.jpg';
+
     results: CardInfo[] = CARD_DATA;
     // card: CardInfo[] = [];
     // card: CardInfo;
@@ -41,6 +43,7 @@ export class LoadImgComponent implements OnInit {
     showButton = 'Show Info';
     showPrevious = false;
     showNext = true;
+    showReset = true;
     // myAnswers: string[] = [];
     enteredAnswer: string;
     myAnswer: Answer;
@@ -213,7 +216,7 @@ export class LoadImgComponent implements OnInit {
     }
 
     doshow() {
-        if (this.showButton == 'Show Info') {
+        if (this.showButton === 'Show Info') {
             this.showButton = 'Hide Info';
         } else {
             this.showButton = 'Show Info';
@@ -238,7 +241,7 @@ export class LoadImgComponent implements OnInit {
     }
 
     showCard() {
-        // debugger
+        //debugger
         this.imgsrc = 'assets/images/' + this.returndeck[this.counter].card_name + '.png';
         this.person = this.returndeck[this.counter].person_name;
         this.action = this.returndeck[this.counter].action_name;
@@ -246,10 +249,10 @@ export class LoadImgComponent implements OnInit {
     }
 
     goPrevious() {
-         debugger
+         //debugger
 
         this.showImage = true;
-         this.counter = this.counter - 1;
+        this.counter = this.counter - 1;
 
         if (this.counter < 52) {
             // this.showCard(this.counter);
@@ -265,6 +268,7 @@ export class LoadImgComponent implements OnInit {
             // this.counter = this.counter + 1;
         } else {
             this.imgsrc = '';
+            this.bkgsrc = 'assets/images/bg.jpg';
             console.log('all done');
         }
 
@@ -275,7 +279,11 @@ export class LoadImgComponent implements OnInit {
         }
 
         if (this.counter < 52) {
+          if (this.firstCard === true) {
+            this.showNext = false;
+          } else {
             this.showNext = true;
+          }
         } else {
             this.showNext = false;
         }
@@ -288,44 +296,53 @@ export class LoadImgComponent implements OnInit {
     }
 
     goNext() {
-         //debugger
-        if (this.firstCard === true ){
-            this.counter = 0;
-            this.showImage = true;
-            this.showCard();
-
-            this.firstCard = false;
-        } else { // not first card
-            this.counter = this.counter + 1;
-            console.log('in else counter = ' + this.counter);
-            this.showImage = true;
-            this.showCard();
-
-
-                // } else {
-                //     console.log('all done');
-                //     // this.containerClass = 'color-container';
-                //     console.log('Answers below:');
-                //     console.log(this.quizAnswers);
-                //     console.log('=================================================================================');
-                //     console.log('wrongs below');
-                //     console.log(this.myWrongs);
-                //     this.reset();
-                // }
+      //debugger
+      if (this.firstCard === true) {
+        this.counter = 0;
+        this.showImage = true;
+        this.showCard();
+        this.firstCard = false;
+      } else { // not first card
+        this.counter = this.counter + 1;
+        //console.log('in else counter = ' + this.counter);
+        if (this.counter >= 52) {
+          console.log('DONE ***********************');
+          this.showNext = false;
+          this.showPrevious = false;
+        } else {
+          this.showImage = true;
+          this.showCard();
         }
 
-        if (this.counter > 0) {
-            this.showPrevious = true;
-        } else {
-            this.showPrevious = false;
-        }
+        // } else {
+        //     console.log('all done');
+        //     // this.containerClass = 'color-container';
+        //     console.log('Answers below:');
+        //     console.log(this.quizAnswers);
+        //     console.log('=================================================================================');
+        //     console.log('wrongs below');
+        //     console.log(this.myWrongs);
+        //     this.reset();
+        // }
+      }
 
-        if (this.counter < 51) {
-            console.log('counter < 51');
-            this.showNext = true;
+      if (this.counter > 0) {
+        this.showPrevious = true;
+      } else {
+        this.showPrevious = false;
+      }
 
-        } else {
-            console.log('counter > 51 ***********************');
+      if (this.counter < 51) {
+        //Console.log('counter < 51');
+        this.showNext = true;
+
+      } else if (this.counter >= 52) {
+        console.log('counter > 51 ***********************');
+        this.showNext = false;
+        this.showPrevious = false;
+
+      } else {
+            console.log('counter > 51 LAST CARD ***********************');
             this.showNext = false;
         }
 

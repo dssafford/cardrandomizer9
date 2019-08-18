@@ -4,19 +4,30 @@
             <!--<mat-card-title>Card Memorization</mat-card-title>-->
         </mat-card-header>
         <mat-card-content>
-    <span>
+      <span>
+         <div *ngIf="firstCard">
+            <img width="300" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{bkgsrc}}>
+            <br>
+            <label>counter={{counter}}</label>
+            <br>
+            <hr>
+        </div>
+        <div *ngIf="showImage && !firstCard">
+            <img width="300" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{imgsrc}}>
+            <br>
+            <label>counter={{counter}}</label>
+            <br>
+            <hr>
+        </div>
         <div *ngIf="showImage">
-        <img width="300" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{imgsrc}}>
+          <button mat-raised-button
+                  color="warn" type="button"
+                  (click)="doshow()">{{showButton}}</button>
+        </div>
         <br>
-        <label>counter={{counter}}</label>
-<br><hr></div>
-            <div *ngIf="showImage">
-        <button mat-raised-button
-                color="warn" type="button"
-                (click)="doshow()">{{showButton}}</button>
-</div> <br>
-    </span><br>
-            <span>
+      </span>
+          <br>
+      <span>
         <div *ngIf=showPerson align="right">
             <label>Person = {{person}}</label><br>
         </div>
@@ -28,16 +39,19 @@
         <div *ngIf=showObject align="right">
             <label>Object = {{object}}</label><br>
         </div>
-    </span>
+      </span>
         </mat-card-content>
         <mat-card-actions align="center">
             <div *ngIf="showPrevious" class="div1">
             <button mat-raised-button color="accent" type="button" (click)="goPrevious()">Previous Card</button>
             &nbsp;</div>
-            <div *ngIf="showNext" class="div1">
+            <div *ngIf="showNext && !firstCard" class="div1">
             <button mat-raised-button color="primary" type="button" (click)="goNext()">Next Card</button>
             &nbsp;</div>
-<div *ngIf="showNext" class="div1">
+            <div *ngIf="firstCard && showNext" class="div1">
+            <button mat-raised-button color="primary" type="button" (click)="goNext()">First Card</button>
+            &nbsp;</div>
+<div *ngIf="showReset" class="div1">
     <button mat-button type="button" (click)="reset()">Reset</button>
 </div>
         </mat-card-actions>
