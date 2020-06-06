@@ -30,7 +30,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '4',
-    'action_name': 'drinking and throwing up',
+    'action_name': 'drinking',
     'card_name': '4_of_hearts',
     'card_number': '4',
     'comments': null,
@@ -79,7 +79,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '9_of_hearts',
     'card_number': '9',
     'comments': null,
-    'object_name': 'hammer',
+    'object_name': 'iphone',
     'person_name': 'steve'
   },
   {
@@ -97,7 +97,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': 'jack_of_hearts',
     'card_number': '11',
     'comments': null,
-    'object_name': 'lake',
+    'object_name': 'water',
     'person_name': 'jesus'
   },
   {
@@ -192,7 +192,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '22',
-    'action_name': 'hitting pc',
+    'action_name': 'swinging',
     'card_name': '9_of_diamonds',
     'card_number': '22',
     'comments': null,
@@ -219,7 +219,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '25',
-    'action_name': 'touching',
+    'action_name': 'caressing',
     'card_name': 'queen_of_diamonds',
     'card_number': '25',
     'comments': null,
@@ -251,7 +251,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_number': '28',
     'comments': null,
     'object_name': 'golf ball',
-    'person_name': 'annika'
+    'person_name': 'paige'
   },
   {
     'id': '29',
