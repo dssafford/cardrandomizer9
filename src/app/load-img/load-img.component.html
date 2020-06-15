@@ -1,108 +1,70 @@
 <div class="dougexample-container">
-    <mat-card align="center" >
-        <mat-card-header>
-<!--            <mat-card-title>Card Memorization</mat-card-title>-->
-        </mat-card-header>
-        <mat-card-content>
-      <span>           <mat-radio-group [(ngModel)]="testType">
-             <mat-radio-button value="person" >Person</mat-radio-button>
-             <mat-radio-button value="action">Action</mat-radio-button>
-             <mat-radio-button value="object">Object</mat-radio-button>
-        <!--    <mat-radio-button value="rwbody" (click)="dido('rwbody')">RWBody</mat-radio-button>-->
-        </mat-radio-group>
-         <div *ngIf="firstCard">
-            <img width="300" align="left" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{bkgsrc}}>
-            <br>
-            <label>counter={{counter}}</label>
-
-            <br>
-            <hr>
+  <h2>
+    Card Randomizer
+  </h2>
+  <mat-card align="center" class="card-container">
+      <div>
+        <div class="card-container__image">
+            <img *ngIf="firstCard" src={{bkgsrc}}>
+            <img *ngIf="showImage && !firstCard" src={{imgsrc}}>
+            <!--<label>Counter= {{counter}}</label>-->
         </div>
-<!--      <mat-divider></mat-divider>-->
-        <!--        // ================================-->
-        <!--           <mat-divider align="right">-->
 
-
-        <!--           </mat-divider>-->
-        <!--           ==================================-->
-
-
-        <div *ngIf="showImage && !firstCard">
-            <img width="300" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{imgsrc}}>
-            <br>
-            <label>counter={{counter}}</label>
-            <br>
-            <hr>
-        </div>
         <div *ngIf="showImage">
           <button mat-raised-button
                   color="warn" type="button"
-                  (click)="doshow()">{{showButton}}</button>
+                  (click)="doshow()">
+            {{showButton}}
+          </button>
         </div>
-        <br>
-      </span>
-          <br>
+      </div>
       <span>
         <div *ngIf=showPerson align="right">
             <label>Person = {{person}}</label><br>
         </div>
-        <br>
         <div *ngIf=showAction align="right">
             <label>Action = {{action}}</label><br>
         </div>
-        <br>
         <div *ngIf=showObject align="right">
             <label>Object = {{object}}</label><br>
         </div>
       </span>
-        </mat-card-content>
-        <mat-card-actions align="center">
-            <div *ngIf="showPrevious" class="div1">
-            <button mat-raised-button color="accent" type="button" (click)="goPrevious()">Previous Card</button>
-            &nbsp;</div>
-            <div *ngIf="showNext && !firstCard" class="div1">
-            <button mat-raised-button color="primary" type="button" (click)="goNext()">Next Card</button>
-            &nbsp;</div>
-            <div *ngIf="firstCard && showNext" class="div1">
-            <button mat-raised-button color="primary" type="button" (click)="goNext()">First Card</button>
-            &nbsp;</div>
-<div *ngIf="showReset" class="div1">
-    <button mat-button type="button" (click)="reset()">Reset</button>
-</div>
-        </mat-card-actions>
-        <mat-card-footer>
-        </mat-card-footer>
-    </mat-card>
+      <div *ngIf="showPrevious" class="div1">
+        <button mat-raised-button color="accent" type="button" (click)="goPrevious()">Previous Card</button>
+        &nbsp;
+      </div>
+      <div *ngIf="showNext && !firstCard" class="div1">
+        <button mat-raised-button color="primary" type="button" (click)="goNext()">Next Card</button>
+        &nbsp;
+      </div>
+      <div *ngIf="firstCard && showNext" class="div1">
+        <button mat-raised-button color="primary" type="button" (click)="goNext()">First Card</button>
+        &nbsp;
+      </div>
+      <div *ngIf="showReset" class="div1">
+        <button mat-button type="button" (click)="reset()">Reset</button>
+      </div>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-    <mat-card align="center">
-        <!--<mat-card-header>-->
-            <!--<mat-card-title>Card Memorization</mat-card-title>-->
-        <!--</mat-card-header>-->
-        <mat-card-content>
-            <mat-form-field>
-                <input matInput class="shit" size="20" [(ngModel)]="enteredAnswer" name="dude" required autofocus
-                       autocomplete="off"
-                       tabindex="0"/>
-            </mat-form-field>
-        </mat-card-content>
-        <mat-card-actions align="center">
-                <button mat-button type="submit">Submit</button>
-        </mat-card-actions>
-        <!--<mat-card-footer>-->
-        <!--</mat-card-footer>-->
-    </mat-card>
+      <mat-form-field>
+        <input matInput class="shit" size="20" [(ngModel)]="enteredAnswer" name="dude" required autofocus
+               autocomplete="off"
+               tabindex="0"/>
+      </mat-form-field>
+      <button mat-button type="submit">Submit</button>
     </form>
-    <mat-card *ngIf="newWrongLength > 0">
-        Wrong Answers:
-        <ul>
-            <li *ngFor="let myWrong of myWrongs">
-                {{ myWrong.question + ' - ' + myWrong.answer }}
-            </li>
-        </ul>
-    </mat-card>
-<div align="center">
-<button mat-button type="button" (click)="onStartTimer()">Start Timer</button>
-  <button mat-button type="button" (click)="onStopTimer()">End Timer</button>
+  </mat-card>
+
+  <mat-card *ngIf="newWrongLength > 0">
+    Wrong Answers:
+    <ul>
+      <li *ngFor="let myWrong of myWrongs">
+        {{ myWrong.question + ' - ' + myWrong.answer }}
+      </li>
+    </ul>
+  </mat-card>
+  <div align="center">
+    <button mat-button type="button" (click)="onStartTimer()">Start Timer</button>
+    <button mat-button type="button" (click)="onStopTimer()">End Timer</button>
     <button mat-button type="button" (click)="onSaveWrongs()">Save Wrongs</button>
     <button mat-button type="button" (click)="onResetTimer()">Reset Timer</button>
     <label>{{myTimer}}</label></div>

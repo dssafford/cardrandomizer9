@@ -15,7 +15,7 @@ import {WrongAnswer} from '../model/wrongAnswer';
 @Component({
     selector: 'app-load-img',
     templateUrl: './load-img.component.html',
-    styleUrls: ['./load-img.component.css']
+    styleUrls: ['./load-img.component.scss']
 })
 export class LoadImgComponent implements OnInit {
 
