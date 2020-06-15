@@ -1,17 +1,32 @@
 <div class="dougexample-container">
     <mat-card align="center" >
         <mat-card-header>
-            <!--<mat-card-title>Card Memorization</mat-card-title>-->
+<!--            <mat-card-title>Card Memorization</mat-card-title>-->
         </mat-card-header>
         <mat-card-content>
-      <span>
+      <span>           <mat-radio-group [(ngModel)]="testType">
+             <mat-radio-button value="person" >Person</mat-radio-button>
+             <mat-radio-button value="action">Action</mat-radio-button>
+             <mat-radio-button value="object">Object</mat-radio-button>
+        <!--    <mat-radio-button value="rwbody" (click)="dido('rwbody')">RWBody</mat-radio-button>-->
+        </mat-radio-group>
          <div *ngIf="firstCard">
-            <img width="300" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{bkgsrc}}>
+            <img width="300" align="left" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{bkgsrc}}>
             <br>
             <label>counter={{counter}}</label>
+
             <br>
             <hr>
         </div>
+<!--      <mat-divider></mat-divider>-->
+        <!--        // ================================-->
+        <!--           <mat-divider align="right">-->
+
+
+        <!--           </mat-divider>-->
+        <!--           ==================================-->
+
+
         <div *ngIf="showImage && !firstCard">
             <img width="300" alt="Angular Logo" width="150" height="200" style="border:5px solid black" src={{imgsrc}}>
             <br>
@@ -85,10 +100,10 @@
             </li>
         </ul>
     </mat-card>
-
+<div align="center">
 <button mat-button type="button" (click)="onStartTimer()">Start Timer</button>
-    <button mat-button type="button" (click)="onStopTimer()">End Timer</button>
+  <button mat-button type="button" (click)="onStopTimer()">End Timer</button>
     <button mat-button type="button" (click)="onSaveWrongs()">Save Wrongs</button>
     <button mat-button type="button" (click)="onResetTimer()">Reset Timer</button>
-    <label>{{myTimer}}</label>
+    <label>{{myTimer}}</label></div>
 </div>
