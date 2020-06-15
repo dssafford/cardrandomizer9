@@ -12,7 +12,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '2',
-    'action_name': 'bending over',
+    'action_name': 'picking up tennis ball',
     'card_name': '2_of_hearts',
     'card_number': '2',
     'comments': null,
@@ -151,7 +151,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '4_of_diamonds',
     'card_number': '17',
     'comments': null,
-    'object_name': 'boobs',
+    'object_name': 'dress',
     'person_name': 'julia'
   },
   {
@@ -160,16 +160,16 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '5_of_diamonds',
     'card_number': '18',
     'comments': null,
-    'object_name': 'phone',
+    'object_name': 'blackberry',
     'person_name': 'trump'
   },
   {
     'id': '19',
-    'action_name': 'dancing',
+    'action_name': 'signing',
     'card_name': '6_of_diamonds',
     'card_number': '19',
     'comments': null,
-    'object_name': 'stage',
+    'object_name': 'street',
     'person_name': 'madonna'
   },
   {
@@ -255,7 +255,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '29',
-    'action_name': 'testing',
+    'action_name': 'hooked up',
     'card_name': '3_of_spades',
     'card_number': '29',
     'comments': null,
@@ -282,7 +282,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '32',
-    'action_name': 'runway',
+    'action_name': 'modelling',
     'card_name': '6_of_spades',
     'card_number': '32',
     'comments': null,
@@ -412,7 +412,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '7_of_clubs',
     'card_number': '46',
     'comments': null,
-    'object_name': 'gun',
+    'object_name': 'machine gun',
     'person_name': 'arnold'
   },
   {

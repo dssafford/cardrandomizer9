@@ -82,7 +82,7 @@ export class LoadImgComponent implements OnInit {
     timer = timer(2000, 1000);
     dude: number;
     timerStarted: boolean = false;
-
+    testType: string;
     constructor(private http: HttpClient, private cardService: CardService) {
     }
 
