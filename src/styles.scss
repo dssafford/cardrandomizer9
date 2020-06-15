@@ -7,14 +7,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
 /* You can add global styles to this file, and also import other style files */
 
-label
-{
-  float: left;
-  width: 300px;
-  font-weight: bold;
-  font-size: medium;
-  /*margin-right: 1em;*/
+label {
+  font-size: 16px;
+  text-align: left;
 }
+
+button + button {
+  margin-left: 14px !important;
+}
+
 .mat-fab {
   margin: 5px;
 }

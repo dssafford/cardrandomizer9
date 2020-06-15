@@ -2,51 +2,76 @@
   <h2>
     Card Randomizer
   </h2>
-  <mat-card align="center" class="card-container">
-      <div>
-        <div class="card-container__image">
-            <img *ngIf="firstCard" src={{bkgsrc}}>
-            <img *ngIf="showImage && !firstCard" src={{imgsrc}}>
-            <!--<label>Counter= {{counter}}</label>-->
-        </div>
-
-        <div *ngIf="showImage">
-          <button mat-raised-button
-                  color="warn" type="button"
+  <mat-card align="center" class="card-wrapper">
+      <div class="card-container">
+        <div class="more-info">
+          <button *ngIf="showImage"
+                  mat-raised-button
+                  color="warn"
+                  type="button"
                   (click)="doshow()">
             {{showButton}}
           </button>
+          <div class="more-info__label">
+            <label *ngIf=showPerson>Person = {{person}}</label>
+            <label *ngIf=showAction>Action = {{action}}</label>
+            <label *ngIf=showObject>Object = {{object}}</label>
+          </div>
         </div>
-      </div>
-      <span>
-        <div *ngIf=showPerson align="right">
-            <label>Person = {{person}}</label><br>
+        <div class="card-container__image">
+          <img *ngIf="firstCard" src={{bkgsrc}}>
+          <img *ngIf="showImage && !firstCard" src={{imgsrc}}>
         </div>
-        <div *ngIf=showAction align="right">
-            <label>Action = {{action}}</label><br>
-        </div>
-        <div *ngIf=showObject align="right">
-            <label>Object = {{object}}</label><br>
-        </div>
-      </span>
-      <div *ngIf="showPrevious" class="div1">
-        <button mat-raised-button color="accent" type="button" (click)="goPrevious()">Previous Card</button>
-        &nbsp;
+
+        <mat-radio-group [(ngModel)]="testType">
+          <label class="counter">Counter= {{counter}}</label>
+          <mat-radio-button value="person">Person</mat-radio-button>
+          <mat-radio-button value="action">Action</mat-radio-button>
+          <mat-radio-button value="object">Object</mat-radio-button>
+          <!--    <mat-radio-button value="rwbody" (click)="dido('rwbody')">RWBody</mat-radio-button>-->
+        </mat-radio-group>
+
       </div>
-      <div *ngIf="showNext && !firstCard" class="div1">
-        <button mat-raised-button color="primary" type="button" (click)="goNext()">Next Card</button>
-        &nbsp;
-      </div>
-      <div *ngIf="firstCard && showNext" class="div1">
-        <button mat-raised-button color="primary" type="button" (click)="goNext()">First Card</button>
-        &nbsp;
-      </div>
-      <div *ngIf="showReset" class="div1">
-        <button mat-button type="button" (click)="reset()">Reset</button>
-      </div>
+
+    <div class="action-buttons">
+
+      <button *ngIf="showPrevious"
+              mat-raised-button
+              color="accent"
+              type="button"
+              (click)="goPrevious()">
+        Previous Card
+      </button>
+      <button *ngIf="showNext && !firstCard"
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="goNext()">
+        Next Card
+      </button>
+      <button *ngIf="firstCard && showNext"
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="goNext()">
+        First Card
+      </button>
+      <button *ngIf="showReset"
+              mat-button
+              type="button"
+              (click)="reset()">
+        Reset
+      </button>
+    </div>
+
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <mat-form-field>
-        <input matInput class="shit" size="20" [(ngModel)]="enteredAnswer" name="dude" required autofocus
+        <input matInput class="shit"
+               size="20"
+               [(ngModel)]="enteredAnswer"
+               name="dude"
+               required
+               autofocus
                autocomplete="off"
                tabindex="0"/>
       </mat-form-field>

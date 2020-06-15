@@ -1,13 +1,68 @@
-.card-container {
+
+.card-wrapper {
   display: flex;
   flex-direction: column;
+  min-width: 600px;
 
-  .card-container__image {
-    img {
-      width: 150px;
-      height: 200px;
-      border:5px solid black
+  .card-container {
+    display: flex;
+    margin: 24px;
+    justify-content: center;
+
+    &> div {
+      flex: 1;
+    }
+
+    .more-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .more-info__label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 22px;
+      }
+    }
+
+    .card-container__image {
+
+      img {
+        width: 150px;
+        height: 200px;
+        border:5px solid black
+      }
+    }
+    mat-radio-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      .counter {
+        padding-bottom: 7px;
+        margin-bottom: 9px;
+        border-bottom: 1px solid #b9b9b9;
+      }
+
+      label {
+        font-weight: 400;
+        color: black;
+        float: none;
+        width: unset;
+      }
+
+      &::ng-deep {
+        .mat-radio-label {
+          font-weight: 400;
+          color: black;
+        }
+      }
     }
   }
 
+  .action-buttons {
+    display: flex;
+    justify-content: center;
+  }
 }
+
