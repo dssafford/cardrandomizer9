@@ -12,11 +12,11 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '2',
-    'action_name': 'picking up tennis ball',
+    'action_name': 'picking up',
     'card_name': '2_of_hearts',
     'card_number': '2',
     'comments': null,
-    'object_name': 'white tennis dress',
+    'object_name': 'tennis ball',
     'person_name': 'anna'
   },
   {
@@ -25,7 +25,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '3_of_hearts',
     'card_number': '3',
     'comments': null,
-    'object_name': 'leg braces',
+    'object_name': 'braces',
     'person_name': 'tom'
   },
   {
@@ -39,7 +39,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '5',
-    'action_name': 'vanishing',
+    'action_name': 'disappearing',
     'card_name': '5_of_hearts',
     'card_number': '5',
     'comments': null,
@@ -48,16 +48,16 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '6',
-    'action_name': 'attacked',
+    'action_name': 'beaten',
     'card_name': '6_of_hearts',
     'card_number': '6',
     'comments': null,
-    'object_name': 'kanye',
+    'object_name': 'microphone',
     'person_name': 'taylor'
   },
   {
     'id': '7',
-    'action_name': 'putting hand through',
+    'action_name': 'fist through',
     'card_name': '7_of_hearts',
     'card_number': '7',
     'comments': null,
@@ -66,11 +66,11 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '8',
-    'action_name': 'running on beach',
+    'action_name': 'running',
     'card_name': '8_of_hearts',
     'card_number': '8',
     'comments': null,
-    'object_name': 'swimsuit',
+    'object_name': 'beach',
     'person_name': 'pam'
   },
   {
@@ -106,7 +106,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': 'queen_of_hearts',
     'card_number': '12',
     'comments': null,
-    'object_name': 'white house',
+    'object_name': 'garden',
     'person_name': 'michelle'
   },
   {
@@ -147,11 +147,11 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '17',
-    'action_name': 'pushing',
+    'action_name': 'zipping up',
     'card_name': '4_of_diamonds',
     'card_number': '17',
     'comments': null,
-    'object_name': 'dress',
+    'object_name': 'boots',
     'person_name': 'julia'
   },
   {
@@ -165,7 +165,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '19',
-    'action_name': 'signing',
+    'action_name': 'singing',
     'card_name': '6_of_diamonds',
     'card_number': '19',
     'comments': null,
@@ -192,11 +192,11 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '22',
-    'action_name': 'swinging',
+    'action_name': 'trashing',
     'card_name': '9_of_diamonds',
     'card_number': '22',
     'comments': null,
-    'object_name': 'baseball bat',
+    'object_name': 'pc',
     'person_name': 'bill'
   },
   {
@@ -210,7 +210,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '24',
-    'action_name': 'turning into',
+    'action_name': 'pointing finger',
     'card_name': 'jack_of_diamonds',
     'card_number': '24',
     'comments': null,
@@ -219,16 +219,16 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '25',
-    'action_name': 'caressing',
+    'action_name': 'posing',
     'card_name': 'queen_of_diamonds',
     'card_number': '25',
     'comments': null,
-    'object_name': 'dress',
+    'object_name': 'polkadot dress',
     'person_name': 'princess'
   },
   {
     'id': '26',
-    'action_name': 'air lifting',
+    'action_name': 'piloting',
     'card_name': 'king_of_diamonds',
     'card_number': '26',
     'comments': null,
@@ -241,12 +241,12 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': 'ace_of_spades',
     'card_number': '27',
     'comments': null,
-    'object_name': 'cameraman',
+    'object_name': 'photographer',
     'person_name': 'rodman'
   },
   {
     'id': '28',
-    'action_name': 'hitting',
+    'action_name': 'golf swing',
     'card_name': '2_of_spades',
     'card_number': '28',
     'comments': null,
@@ -286,12 +286,12 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '6_of_spades',
     'card_number': '32',
     'comments': null,
-    'object_name': 'meat dress',
+    'object_name': 'meat suit',
     'person_name': 'lady'
   },
   {
     'id': '33',
-    'action_name': 'selfie',
+    'action_name': 'taking selfie',
     'card_name': '7_of_spades',
     'card_number': '33',
     'comments': null,
@@ -300,7 +300,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '34',
-    'action_name': 'hitting maid',
+    'action_name': 'hitting person',
     'card_name': '8_of_spades',
     'card_number': '34',
     'comments': null,
@@ -309,7 +309,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '35',
-    'action_name': 'slapping',
+    'action_name': 'poking',
     'card_name': '9_of_spades',
     'card_number': '35',
     'comments': null,
@@ -331,7 +331,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': 'jack_of_spades',
     'card_number': '37',
     'comments': null,
-    'object_name': 'buddha',
+    'object_name': 'buddha statue',
     'person_name': 'dali'
   },
   {
@@ -354,16 +354,16 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '40',
-    'action_name': 'punching',
+    'action_name': 'boxing',
     'card_name': 'ace_of_clubs',
     'card_number': '40',
     'comments': null,
-    'object_name': 'butterfly',
+    'object_name': 'ring',
     'person_name': 'ali'
   },
   {
     'id': '41',
-    'action_name': 'lifting',
+    'action_name': 'holding up',
     'card_name': '2_of_clubs',
     'card_number': '41',
     'comments': null,
@@ -372,20 +372,20 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '42',
-    'action_name': 'punched',
+    'action_name': 'eating',
     'card_name': '3_of_clubs',
     'card_number': '42',
     'comments': null,
-    'object_name': 'face',
+    'object_name': 'hamburger',
     'person_name': 'brad'
   },
   {
     'id': '43',
-    'action_name': 'karate chop',
+    'action_name': 'karate kick',
     'card_name': '4_of_clubs',
     'card_number': '43',
     'comments': null,
-    'object_name': 'person',
+    'object_name': 'face',
     'person_name': 'angelina'
   },
   {
@@ -403,7 +403,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '6_of_clubs',
     'card_number': '45',
     'comments': null,
-    'object_name': 'rain storm',
+    'object_name': 'rain',
     'person_name': 'rhianna'
   },
   {
@@ -430,7 +430,7 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': '9_of_clubs',
     'card_number': '48',
     'comments': null,
-    'object_name': 'baby food factory',
+    'object_name': 'factory',
     'person_name': 'bill'
   },
   {
@@ -444,11 +444,11 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '50',
-    'action_name': 'thowing holy water',
+    'action_name': 'throwing holy water',
     'card_name': 'jack_of_clubs',
     'card_number': '50',
     'comments': null,
-    'object_name': 'water',
+    'object_name': 'chalice',
     'person_name': 'pope'
   },
   {
@@ -457,16 +457,16 @@ export const CARD_DATA: CardInfo[] = [
     'card_name': 'queen_of_clubs',
     'card_number': '51',
     'comments': null,
-    'object_name': 'beach',
+    'object_name': 'stage',
     'person_name': 'beyonce'
   },
   {
     'id': '52',
-    'action_name': 'rapping',
+    'action_name': 'spinning',
     'card_name': 'king_of_clubs',
     'card_number': '52',
     'comments': null,
-    'object_name': 'giant mixer',
+    'object_name': 'record',
     'person_name': 'jz'
   }
 ];

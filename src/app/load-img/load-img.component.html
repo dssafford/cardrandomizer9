@@ -25,9 +25,9 @@
 
         <mat-radio-group [(ngModel)]="testType">
           <label class="counter">Counter= {{counter}}</label>
-          <mat-radio-button value="person">Person</mat-radio-button>
-          <mat-radio-button value="action">Action</mat-radio-button>
-          <mat-radio-button value="object">Object</mat-radio-button>
+          <mat-radio-button value="person"   (click)="pao('person')">Person</mat-radio-button>
+          <mat-radio-button value="action"  (click)="pao('action')">Action</mat-radio-button>
+          <mat-radio-button value="object"  (click)="pao('object')">Object</mat-radio-button>
           <!--    <mat-radio-button value="rwbody" (click)="dido('rwbody')">RWBody</mat-radio-button>-->
         </mat-radio-group>
 

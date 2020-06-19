@@ -19,7 +19,7 @@ import {WrongAnswer} from '../model/wrongAnswer';
 })
 export class LoadImgComponent implements OnInit {
 
-    imgsrc = ''; //'assets/images/2_of_hearts.png';
+    imgsrc = ''; // 'assets/images/2_of_hearts.png';
     bkgsrc = 'assets/images/bg.jpg';
 
     results: CardInfo[] = CARD_DATA;
@@ -56,36 +56,46 @@ export class LoadImgComponent implements OnInit {
 
     newWrongLength = 0;
     startTime: any;
-    intervalStartTime: number = 0;
+    intervalStartTime = 0;
     // const startTime = n;
     const;
     tm = 0;
     d: any;
     n: any;
     currentTime: any;
-    seconds: number = 0;
-    secondsString: string = '0';
+    seconds = 0;
+    secondsString = '0';
     centiseconds = 0;
-    centisecondsString: string = '0';
+    centisecondsString = '0';
     miliseconds = 0;
-    milisecondsString: string = '0';
-    hours: number = 0;
-    hoursString: string = '';
+    milisecondsString = '0';
+    hours = 0;
+    hoursString = '';
     minutes = 0;
-    minutesString: string = '';
+    minutesString = '';
     myTimer: string;
-    testDoug: string = 'hobo';
+    testDoug = 'hobo';
     timerInterval: any;
     subscription1: any;
     subscription2: any;
     ticks = 0;
     timer = timer(2000, 1000);
     dude: number;
-    timerStarted: boolean = false;
+    timerStarted = false;
     testType: string;
     constructor(private http: HttpClient, private cardService: CardService) {
     }
 
+  pao(inputString: string): void {
+    // if (inputString === 'person') {
+    //   this.showPerson = true;
+    // } else if(inputString === 'action') {
+    //   this.showAction = true;
+    // } else {
+    //   this.showObject = true;
+    // }
+
+  }
     onStartTimer() {
         this.d = new Date();
         this.n = this.d.getTime();
@@ -122,11 +132,6 @@ export class LoadImgComponent implements OnInit {
         this.d = new Date();
         this.n = this.d.getTime();
         this.currentTime = this.n;
-        // console.log('currentTime');
-        // console.log(this.currentTime);
-        // console.log('startTime');
-        // console.log(this.intervalStartTime);
-        // console.log('testDoug = ' + this.testDoug);
 
         this.tm = (this.currentTime - this.intervalStartTime);
         this.hours = Math.floor(this.tm / 1000 / 60 / 60);
@@ -160,22 +165,23 @@ export class LoadImgComponent implements OnInit {
             this.hoursString = '0';
         }
         this.myTimer = this.hoursString + ' - ' + this.minutesString + ':' + this.secondsString;
-
-        // console.log(this.hoursString + this.minutesString + ':' + this.secondsString);
-
-        // document.getElementById('timer').innerHTML = this.hoursString + this.minutesString + ':' + this.secondsString + '<small>.' + this.centisecondsString + '</small>';
-    }
+   }
 
 
     onSubmit() {
-         //debugger
+         // debugger
 
         if (this.counter < 52) {
             this.myAnswer = new Answer();
             this.myAnswer.id = this.counter;
-            this.myAnswer.question = this.person;
+            if (this.testType === 'person') {
+              this.myAnswer.question = this.person;
+            } else if(this.testType === 'action') {
+              this.myAnswer.question = this.action;
+            } else {
+              this.myAnswer.question = this.object;
+            }
             this.myAnswer.answer = this.enteredAnswer;
-
             this.myWrongAnswer = new WrongAnswer();
             this.myWrongAnswer.answer = this.person;
 
@@ -241,7 +247,6 @@ export class LoadImgComponent implements OnInit {
     }
 
     showCard() {
-        //debugger
         this.imgsrc = 'assets/images/' + this.returndeck[this.counter].card_name + '.png';
         this.person = this.returndeck[this.counter].person_name;
         this.action = this.returndeck[this.counter].action_name;
@@ -249,23 +254,14 @@ export class LoadImgComponent implements OnInit {
     }
 
     goPrevious() {
-         //debugger
-
         this.showImage = true;
         this.counter = this.counter - 1;
 
         if (this.counter < 52) {
-            // this.showCard(this.counter);
             this.imgsrc = 'assets/images/' + this.returndeck[this.counter].card_name + '.png';
             this.person = this.returndeck[this.counter].person_name;
             this.action = this.returndeck[this.counter].action_name;
             this.object = this.returndeck[this.counter].object_name;
-            // this.myIndex = Math.round(Math.random() * 52);
-//            this.imgsrc = 'assets/images/' + this.returndeck[this.counter].card_name + '.png';
-//            this.person = this.returndeck[this.counter].person_name;
-//            this.action = this.returndeck[this.counter].action_name;
-//            this.object = this.returndeck[this.counter].object_name;
-            // this.counter = this.counter + 1;
         } else {
             this.imgsrc = '';
             this.bkgsrc = 'assets/images/bg.jpg';
@@ -296,7 +292,6 @@ export class LoadImgComponent implements OnInit {
     }
 
     goNext() {
-      //debugger
       if (this.firstCard === true) {
         this.counter = 0;
         this.showImage = true;
@@ -304,26 +299,14 @@ export class LoadImgComponent implements OnInit {
         this.firstCard = false;
       } else { // not first card
         this.counter = this.counter + 1;
-        //console.log('in else counter = ' + this.counter);
+        // console.log('in else counter = ' + this.counter);
         if (this.counter >= 52) {
-          console.log('DONE ***********************');
           this.showNext = false;
           this.showPrevious = false;
         } else {
           this.showImage = true;
           this.showCard();
         }
-
-        // } else {
-        //     console.log('all done');
-        //     // this.containerClass = 'color-container';
-        //     console.log('Answers below:');
-        //     console.log(this.quizAnswers);
-        //     console.log('=================================================================================');
-        //     console.log('wrongs below');
-        //     console.log(this.myWrongs);
-        //     this.reset();
-        // }
       }
 
       if (this.counter > 0) {
@@ -333,28 +316,18 @@ export class LoadImgComponent implements OnInit {
       }
 
       if (this.counter < 51) {
-        //Console.log('counter < 51');
         this.showNext = true;
 
       } else if (this.counter >= 52) {
-        console.log('counter > 51 ***********************');
         this.showNext = false;
         this.showPrevious = false;
 
       } else {
-            console.log('counter > 51 LAST CARD ***********************');
             this.showNext = false;
         }
 
 
     }
-
-    // addPost(post: Post){
-    //     return this.http.post('/api/post/createPost',{
-    //         title : post.title,
-    //         description : post.description
-    //     })
-    // }
 
     onSaveWrongs() {
 
@@ -372,63 +345,13 @@ export class LoadImgComponent implements OnInit {
 
     }
     ngOnInit() {
-// debugger
-
-
-        // console.log(this.http.get('http://localhost:3000/api/user/login').toPromise().then());
-
-        // this.cardService.addArray().subscribe(
-        //     data => console.log(data),
-        //         Error => console.log(Error));
-
-        // // const headers = new HttpHeaders({'Content-type': 'application/json'});
-        // const dude = this.http.post('http://localhost:3000/api/enteranswers', 'doug');
-        //
-        // this.http
-        //     .post('http://localhost:3000/api/enteranswers-url', 'shit')
-        //     .subscribe(
-        //         data => console.log('success', data),
-        //         error => console.log('oops', error)
-        //     );
-
-
-        this.d = new Date();
-        this.n = this.d.getTime();
-        this.intervalStartTime = this.n;
-        this.tm = 0;
-        // console.log('start time');
-        // console.log(this.intervalStartTime);
-
-        // this.timerInterval = setInterval(this.updateTimer, 10);
-        // setTimeout(() => {
-        //         this.updateTimer(this.intervalStartTime);
-        //     },
-        //     1000);
-
-        // this.updateTimer();
-
-
-        // debugger
-        this.counter = 0;
-        // debugger
-        // console.log(this.results);
-        // for (let i = 0; i < 52; i++) {
-        //     console.log(this.results[i]);
-        //     console.log(this.results[i].card_name);
-        //     console.log(this.results[i].person_name);
-        //     console.log(this.results[i].action_name);
-        //     console.log(this.results[i].object_name);
-        //     console.log(this.results[i].card_number);
-        // }
-        // console.log('-----------------------------------------------');
-        // console.log('-----------------------------------------------');
-        this.returndeck = this.shuffleCards(this.results);
-        // console.log('Shuffled Deck:');
-        // console.log(this.returndeck);
-        // this.results = this.LoadCardData();
-        // console.log('this is my results data: ' + this.results);
-        // console.log('Why: ' + this.results);
-        // this.createMasterCardList();
+      this.testType = 'person';
+      this.d = new Date();
+      this.n = this.d.getTime();
+      this.intervalStartTime = this.n;
+      this.tm = 0;
+      this.counter = 0;
+      this.returndeck = this.shuffleCards(this.results);
 
     }
 
