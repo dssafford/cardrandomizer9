@@ -1,23 +1,29 @@
 <div class="dougexample-container">
-  <h2>
+  <h1>
     Card Randomizer
-  </h2>
+  </h1>
   <mat-card align="center" class="card-wrapper">
       <div class="card-container">
         <div class="more-info">
-          <button *ngIf="showImage"
+<!--          <button *ngIf="showImage"-->
+          <button
                   mat-raised-button
                   color="warn"
                   type="button"
-                  (click)="doshow()">
+                  (click)="doshow()"
+                  class="justbutton-showinfo">
             {{showButton}}
           </button>
           <div class="more-info__label">
-            <label *ngIf=showPerson>Person = {{person}}</label>
-            <label *ngIf=showAction>Action = {{action}}</label>
-            <label *ngIf=showObject>Object = {{object}}</label>
+<!--            <label *ngIf=showPerson class="label-showinfo">Person = {{person}}</label>-->
+<!--            <label *ngIf=showAction>Action = {{action}}</label>-->
+<!--            <label *ngIf=showObject>Object = {{object}}</label>-->
+            <label class="label-showinfo">Person = {{person}}</label>
+            <label >Action = {{action}}</label>
+            <label >Object = {{object}}</label>
           </div>
-        </div>
+          <hr>
+            <label>{{myTimer}}</label></div>
         <div class="card-container__image">
           <img *ngIf="firstCard" src={{bkgsrc}}>
           <img *ngIf="showImage && !firstCard" src={{imgsrc}}>
@@ -28,43 +34,56 @@
           <mat-radio-button value="person"   (click)="pao('person')">Person</mat-radio-button>
           <mat-radio-button value="action"  (click)="pao('action')">Action</mat-radio-button>
           <mat-radio-button value="object"  (click)="pao('object')">Object</mat-radio-button>
-          <!--    <mat-radio-button value="rwbody" (click)="dido('rwbody')">RWBody</mat-radio-button>-->
+
+          <div class="justbutton">
+          <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="justbutton">Start Timer</button>
+            <br>
+          <button mat-flat-button type="button" color="accent" (click)="onStopTimer()" class="justbutton">End Timer</button>
+            <br>
+                  <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="justbutton">Reset Timer</button>
+            <br>
+            <button mat-flat-button type="button" (click)="onSaveWrongs()" class="justbutton">Save Wrong</button>
+          </div>
         </mat-radio-group>
 
       </div>
 
-    <div class="action-buttons">
 
+    <div>
       <button *ngIf="showPrevious"
               mat-raised-button
               color="accent"
               type="button"
-              (click)="goPrevious()">
+              (click)="goPrevious()"
+              class="justbutton-nextprevious">
         Previous Card
       </button>
       <button *ngIf="showNext && !firstCard"
               mat-raised-button
               color="primary"
               type="button"
-              (click)="goNext()">
+              (click)="goNext()"
+              class="justbutton-nextprevious">
         Next Card
       </button>
       <button *ngIf="firstCard && showNext"
               mat-raised-button
               color="primary"
               type="button"
-              (click)="goNext()">
+              (click)="goNext()"
+              class="justbutton">
         First Card
       </button>
       <button *ngIf="showReset"
               mat-button
               type="button"
-              (click)="reset()">
+              (click)="reset()"
+            class="justbutton-noborder">
         Reset
       </button>
     </div>
-
-    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <div align="center">
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm" >
       <mat-form-field>
         <input matInput class="shit"
                size="20"
@@ -75,22 +94,23 @@
                autocomplete="off"
                tabindex="0"/>
       </mat-form-field>
+
       <button mat-button type="submit">Submit</button>
     </form>
+
+    </div>
   </mat-card>
 
-  <mat-card *ngIf="newWrongLength > 0">
-    Wrong Answers:
+  <mat-card class="d" *ngIf="newWrongLength > 0">
+    <b>Wrong Answers:</b>
+    <br>
+    Correct: Your Answer
     <ul>
       <li *ngFor="let myWrong of myWrongs">
         {{ myWrong.question + ' - ' + myWrong.answer }}
       </li>
     </ul>
+    <hr>
   </mat-card>
-  <div align="center">
-    <button mat-button type="button" (click)="onStartTimer()">Start Timer</button>
-    <button mat-button type="button" (click)="onStopTimer()">End Timer</button>
-    <button mat-button type="button" (click)="onSaveWrongs()">Save Wrongs</button>
-    <button mat-button type="button" (click)="onResetTimer()">Reset Timer</button>
-    <label>{{myTimer}}</label></div>
+
 </div>
