@@ -186,7 +186,7 @@ export class LoadImgComponent implements OnInit {
             this.myWrongAnswer.answer = this.person;
 
 
-            if (this.myAnswer.question === this.myAnswer.answer) {
+            if (this.myAnswer.question.includes(this.myAnswer.answer)) {
                 this.myAnswer.correct = true;
             } else {
                 this.myAnswer.correct = false;

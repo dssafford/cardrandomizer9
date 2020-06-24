@@ -74,13 +74,7 @@
               class="justbutton">
         First Card
       </button>
-      <button *ngIf="showReset"
-              mat-button
-              type="button"
-              (click)="reset()"
-            class="justbutton-noborder">
-        Reset
-      </button>
+
     </div>
     <div align="center">
     <form (ngSubmit)="onSubmit()" #myForm="ngForm" >
@@ -97,7 +91,13 @@
 
       <button mat-button type="submit">Submit</button>
     </form>
-
+            <button *ngIf="showReset"
+                    mat-button
+                    type="button"
+                    (click)="reset()"
+                  class="justbutton-noborder">
+              Reset
+            </button>
     </div>
   </mat-card>
 
