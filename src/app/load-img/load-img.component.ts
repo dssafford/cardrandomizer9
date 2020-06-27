@@ -2,11 +2,11 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {CardInfo} from '../model/CardInfo';
 import {CARD_DATA} from '../data/cards';
-import {RandomWord} from '../model/randomWord';
-import {RANDOM_WORDS} from '../data/randomWords';
-import * as find from 'lodash/find';
+// import {RandomWord} from '../model/randomWord';
+// import {RANDOM_WORDS} from '../data/randomWords';
+// import * as find from 'lodash/find';
 import * as shuffle from 'lodash/shuffle';
-import {log} from 'util';
+// import {log} from 'util';
 import {Observable, timer} from 'rxjs';
 import {Answer} from '../model/answer';
 import {CardService} from '../service/card.service';
@@ -87,13 +87,13 @@ export class LoadImgComponent implements OnInit {
     }
 
   pao(inputString: string): void {
-    // if (inputString === 'person') {
-    //   this.showPerson = true;
-    // } else if(inputString === 'action') {
-    //   this.showAction = true;
-    // } else {
-    //   this.showObject = true;
-    // }
+    if (inputString === 'person') {
+      this.showPerson = true;
+    } else if(inputString === 'action') {
+      this.showAction = true;
+    } else {
+      this.showObject = true;
+    }
 
   }
     onStartTimer() {

@@ -399,12 +399,12 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '45',
-    'action_name': 'holding umbrella',
+    'action_name': 'riding',
     'card_name': '6_of_clubs',
     'card_number': '45',
     'comments': null,
-    'object_name': 'rain',
-    'person_name': 'rhianna'
+    'object_name': 'broom',
+    'person_name': 'witch'
   },
   {
     'id': '46',

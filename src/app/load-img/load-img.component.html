@@ -14,13 +14,10 @@
                   class="justbutton-showinfo">
             {{showButton}}
           </button>
-          <div class="more-info__label">
-<!--            <label *ngIf=showPerson class="label-showinfo">Person = {{person}}</label>-->
-<!--            <label *ngIf=showAction>Action = {{action}}</label>-->
-<!--            <label *ngIf=showObject>Object = {{object}}</label>-->
-            <label class="label-showinfo">Person = {{person}}</label>
-            <label >Action = {{action}}</label>
-            <label >Object = {{object}}</label>
+          <div *ngIf=showPerson class="more-info__label">
+            <label *ngIf=showPerson class="label-showinfo">Person = {{person}}</label>
+            <label *ngIf=showAction>Action = {{action}}</label>
+            <label *ngIf=showObject>Object = {{object}}</label>
           </div>
           <hr>
             <label>{{myTimer}}</label></div>
