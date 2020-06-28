@@ -19,8 +19,9 @@
             <label *ngIf=showAction>Action = {{action}}</label>
             <label *ngIf=showObject>Object = {{object}}</label>
           </div>
-          <hr>
-            <label>{{myTimer}}</label></div>
+<!--          <hr>-->
+<!--            <label>{{myTimer}}</label>-->
+        </div>
         <div class="card-container__image">
           <img *ngIf="firstCard" src={{bkgsrc}}>
           <img *ngIf="showImage && !firstCard" src={{imgsrc}}>
@@ -32,14 +33,18 @@
           <mat-radio-button value="action"  (click)="pao('action')">Action</mat-radio-button>
           <mat-radio-button value="object"  (click)="pao('object')">Object</mat-radio-button>
 
-          <div class="justbutton">
-          <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="justbutton">Start Timer</button>
-            <br>
-          <button mat-flat-button type="button" color="accent" (click)="onStopTimer()" class="justbutton">End Timer</button>
-            <br>
-                  <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="justbutton">Reset Timer</button>
-            <br>
-            <button mat-flat-button type="button" (click)="onSaveWrongs()" class="justbutton">Save Wrong</button>
+          <div>
+            <p align="center" style="color:red;font-size: 20px;width: 150px;height: 10px">Timer Stuff<br></p>
+              <div align="left">
+          <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="timerbutton">Start</button>
+<!--            <br>-->
+          <button mat-flat-button type="button" color="accent" (click)="onStopTimer()" class="timerbutton">End</button>
+<!--            <br>-->
+                  <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="timerbutton">Reset</button>
+<!--            <br>-->
+            <button mat-flat-button type="button" (click)="onSaveWrongs()" class="timerbutton">Save Wrong</button>
+            <p align="center" class="pclass">{{myTimer}}</p>
+            </div>
           </div>
         </mat-radio-group>
 
@@ -71,8 +76,11 @@
               class="justbutton">
         First Card
       </button>
+<!--      <hr>-->
 
+<!--      <p align="center">{{myTimer}}</p>-->
     </div>
+
     <div align="center">
     <form (ngSubmit)="onSubmit()" #myForm="ngForm" >
       <mat-form-field>
@@ -95,6 +103,13 @@
                   class="justbutton-noborder">
               Reset
             </button>
+      <button
+              mat-raised-button
+              type="button"
+              (click)="goFirst()"
+              class="justbutton-noborder">
+        Test
+      </button>
     </div>
   </mat-card>
 

@@ -164,7 +164,8 @@ export class LoadImgComponent implements OnInit {
         if (this.hours === 0) {
             this.hoursString = '0';
         }
-        this.myTimer = this.hoursString + ' - ' + this.minutesString + ':' + this.secondsString;
+        this.myTimer = this.hoursString + ':' + this.minutesString + ':' + this.secondsString;
+        // console.log(this.myTimer);
    }
 
 
@@ -291,6 +292,14 @@ export class LoadImgComponent implements OnInit {
 
     }
 
+    goFirst() {
+      this.counter = 0;
+      this.showCard();
+      this.firstCard = true;
+      this.showNext = true;
+      this.showPrevious = false;
+
+    }
     goNext() {
       if (this.firstCard === true) {
         this.counter = 0;

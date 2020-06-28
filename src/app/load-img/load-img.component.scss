@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     min-width: 800px;
-    background-color: rgba(255, 140, 0, 0.43);
+    //background-color: rgba(255, 140, 0, 0.43);
 
     .card-container {
       display: flex;
@@ -44,9 +44,10 @@
         margin-bottom: 3px;
 
         .counter {
-          padding-bottom: 7px;
-          margin-bottom: 3px;
-          border-bottom: 1px solid #b9b9b9;
+          font-weight: bold;
+          padding-bottom: 1px;
+          margin-bottom: 1px;
+          //border-bottom: 1px solid #b9b9b9;
         }
 
         label {
@@ -100,7 +101,7 @@
     //  margin-top: 22px;
     }
   .justbutton {
-    border-top: 1px solid #b9b9b9;
+    //border-top: 1px solid #b9b9b9;
     line-height: 20px;
     width: 100px !important;
     height: 20px !important;
@@ -109,6 +110,17 @@
     text-align: center !important;
     margin-top: 2px;
     margin-bottom: 1px;
+  }
+  .timerbutton {
+    //border-top: 1px solid #b9b9b9;
+    line-height: 20px;
+    width: 25px !important;
+    height: 20px !important;
+    padding-top: 0;
+    vertical-align: top;
+    text-align: center !important;
+    //margin-top: 2px;
+    //margin-bottom: 1px;
   }
   .justbutton-noborder {
     //border-top: 1px solid #b9b9b9;
@@ -147,4 +159,8 @@
   .label-showinfo {
     text-align: left;
     width: 150px;
+  }
+  .pclass {
+    color: grey;
+    font-size: 20px;
   }

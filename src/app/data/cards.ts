@@ -57,7 +57,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '7',
-    'action_name': 'fist through',
+    'action_name': 'punching',
     'card_name': '7_of_hearts',
     'card_number': '7',
     'comments': null,
@@ -75,7 +75,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '9',
-    'action_name': 'pounds with fist',
+    'action_name': 'stomping',
     'card_name': '9_of_hearts',
     'card_number': '9',
     'comments': null,
@@ -192,7 +192,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '22',
-    'action_name': 'kicks',
+    'action_name': 'pouring coffee',
     'card_name': '9_of_diamonds',
     'card_number': '22',
     'comments': null,
@@ -255,7 +255,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '29',
-    'action_name': 'hooked up',
+    'action_name': 'hooking up',
     'card_name': '3_of_spades',
     'card_number': '29',
     'comments': null,
@@ -363,7 +363,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '41',
-    'action_name': 'holding up',
+    'action_name': 'rubbing',
     'card_name': '2_of_clubs',
     'card_number': '41',
     'comments': null,
@@ -381,7 +381,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '43',
-    'action_name': 'karate kick',
+    'action_name': 'karate chop',
     'card_name': '4_of_clubs',
     'card_number': '43',
     'comments': null,
@@ -399,7 +399,7 @@ export const CARD_DATA: CardInfo[] = [
   },
   {
     'id': '45',
-    'action_name': 'riding',
+    'action_name': 'flying',
     'card_name': '6_of_clubs',
     'card_number': '45',
     'comments': null,
