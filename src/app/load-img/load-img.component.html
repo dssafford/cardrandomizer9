@@ -1,6 +1,6 @@
 <div class="dougexample-container">
   <h1>
-    Card Randomizer
+    Card Tester
   </h1>
   <mat-card align="center" class="card-wrapper">
       <div class="card-container">
@@ -34,7 +34,7 @@
           <mat-radio-button value="object"  (click)="pao('object')">Object</mat-radio-button>
 
           <div>
-            <p align="center" style="color:red;font-size: 20px;width: 150px;height: 10px">Timer Stuff<br></p>
+            <p align="center" style="color:red;font-size: 20px;width: 150px;height: 10px;padding-left: 20px">Timer Controls<br></p>
               <div align="left">
           <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="timerbutton">Start</button>
 <!--            <br>-->
@@ -42,8 +42,8 @@
 <!--            <br>-->
                   <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="timerbutton">Reset</button>
 <!--            <br>-->
-            <button mat-flat-button type="button" (click)="onSaveWrongs()" class="timerbutton">Save Wrong</button>
-            <p align="center" class="pclass">{{myTimer}}</p>
+<!--            <button mat-raised-button type="button" (click)="onSaveWrongs()" class="timerbutton">Save Wrong Answers</button>-->
+             <p align="center" class="pclass" >{{myTimer}}</p>
             </div>
           </div>
         </mat-radio-group>
@@ -110,6 +110,7 @@
               class="justbutton-noborder">
         Test
       </button>
+<!--      <button mat-raised-button type="button" (click)="onSaveWrongs()" class="justbutton-noborder">Save Wrongs</button>-->
     </div>
   </mat-card>
 

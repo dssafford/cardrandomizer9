@@ -73,7 +73,7 @@ export class LoadImgComponent implements OnInit {
     hoursString = '';
     minutes = 0;
     minutesString = '';
-    myTimer: string;
+    myTimer = '00:00:00';
     testDoug = 'hobo';
     timerInterval: any;
     subscription1: any;

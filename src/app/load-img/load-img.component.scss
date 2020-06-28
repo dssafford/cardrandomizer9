@@ -114,11 +114,13 @@
   .timerbutton {
     //border-top: 1px solid #b9b9b9;
     line-height: 20px;
-    width: 25px !important;
+    width: 10px !important;
     height: 20px !important;
     padding-top: 0;
     vertical-align: top;
     text-align: center !important;
+    margin-right: 1px !important;
+    margin-left: 1px !important;
     //margin-top: 2px;
     //margin-bottom: 1px;
   }
@@ -157,10 +159,16 @@
     margin-bottom: 1px;
   }
   .label-showinfo {
-    text-align: left;
+    alignment: left;
+    //text-align: left;
     width: 150px;
   }
   .pclass {
+    margin-top: 0;
+    margin-bottom: 0;
+    alignment: center;
+    vertical-align: top;
     color: grey;
     font-size: 20px;
+    width: 200px;
   }
