@@ -25,18 +25,21 @@ import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 // import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
-
+import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoadImgComponent
+    LoadImgComponent,
+    ConfirmationDialogComponent
   ],
   imports: [HttpClientModule, BrowserModule, BrowserAnimationsModule,
       ReactiveFormsModule, FormsModule, MaterialModule, MatInputModule,
       MatRadioModule, MatDialogModule, MatCheckboxModule, MatIconModule,
       MatCardModule
   ],
-  entryComponents: [],
+  entryComponents: [
+    ConfirmationDialogComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
