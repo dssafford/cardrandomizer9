@@ -32,7 +32,6 @@
           <mat-radio-button value="person"   (click)="pao('person')">Person</mat-radio-button>
           <mat-radio-button value="action"  (click)="pao('action')">Action</mat-radio-button>
           <mat-radio-button value="object"  (click)="pao('object')">Object</mat-radio-button>
-
           <div>
             <p align="center" style="color:red;font-size: 20px;width: 150px;height: 10px;padding-left: 20px">Timer Controls<br></p>
               <div align="left">
@@ -96,6 +95,15 @@
 
       <button mat-button type="submit">Submit</button>
     </form>
+<!--      <h2 mat-dialog-title>Reset All?</h2>-->
+<!--      <mat-dialog-content>This will reset all elements.</mat-dialog-content>-->
+<!--      <mat-dialog-actions>-->
+<!--        <button mat-button mat-dialog-close>Cancel</button>-->
+<!--        &lt;!&ndash; The mat-dialog-close directive optionally accepts a value as a result for the dialog. &ndash;&gt;-->
+<!--        <button *ngIf="showReset" mat-button [mat-dialog-close]="true" (click)="reset()">Reset</button>-->
+<!--      </mat-dialog-actions>-->
+
+
             <button *ngIf="showReset"
                     mat-button
                     type="button"

@@ -24,6 +24,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
+// import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {MatRadioModule} from '@angular/material/radio';
       MatRadioModule, MatDialogModule, MatCheckboxModule, MatIconModule,
       MatCardModule
   ],
+  entryComponents: [],
   providers: [],
   bootstrap: [AppComponent]
 })

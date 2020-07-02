@@ -11,6 +11,8 @@ import {Observable, timer} from 'rxjs';
 import {Answer} from '../model/answer';
 import {CardService} from '../service/card.service';
 import {WrongAnswer} from '../model/wrongAnswer';
+import {MatDialog} from '@angular/material/dialog';
+// import {ConfirmDialogComponent} from '../confirm-dialog/confirm-dialog.component';
 
 @Component({
     selector: 'app-load-img',
@@ -18,6 +20,9 @@ import {WrongAnswer} from '../model/wrongAnswer';
     styleUrls: ['./load-img.component.scss']
 })
 export class LoadImgComponent implements OnInit {
+  private confirmationDialogService: any;
+    constructor(private http: HttpClient, private cardService: CardService) {
+    }
 
     imgsrc = ''; // 'assets/images/2_of_hearts.png';
     bkgsrc = 'assets/images/bg.jpg';
@@ -83,19 +88,35 @@ export class LoadImgComponent implements OnInit {
     dude: number;
     timerStarted = false;
     testType: string;
-    constructor(private http: HttpClient, private cardService: CardService) {
-    }
-
+  dclick;
   pao(inputString: string): void {
     if (inputString === 'person') {
       this.showPerson = true;
-    } else if(inputString === 'action') {
+    } else if (inputString === 'action') {
       this.showAction = true;
     } else {
       this.showObject = true;
     }
 
   }
+  // deleteUser() {
+  //   // let's call our modal window
+  //   const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+  //     maxWidth: '400px',
+  //     data: {
+  //       title: 'Are you sure?',
+  //       message: 'You are about to delete user '}
+  //   });
+  //
+  //   // listen to response
+  //   dialogRef.afterClosed().subscribe(dialogResult => {
+  //     // if user pressed yes dialogResult will be true,
+  //     // if he pressed no - it will be false
+  //     console.log(dialogResult);
+  //
+  //   });
+  //
+  // }
     onStartTimer() {
         this.d = new Date();
         this.n = this.d.getTime();
@@ -124,7 +145,11 @@ export class LoadImgComponent implements OnInit {
 
         // console.log(new Date().getTime() - this.startTime.getTime()); // When you need, subtract saved date from new one
     }
-
+  public openConfirmationDialog() {
+    this.confirmationDialogService.confirm('Please confirm..', 'Do you really want to ... ?')
+      .then((confirmed) => console.log('User confirmed:', confirmed))
+      .catch(() => console.log('User dismissed the dialog (e.g., by using ESC, clicking the cross icon, or clicking outside the dialog)'));
+  }
 
     updateTimer(dougStartTime: number) {
         this.intervalStartTime = dougStartTime;
@@ -177,7 +202,7 @@ export class LoadImgComponent implements OnInit {
             this.myAnswer.id = this.counter;
             if (this.testType === 'person') {
               this.myAnswer.question = this.person;
-            } else if(this.testType === 'action') {
+            } else if (this.testType === 'action') {
               this.myAnswer.question = this.action;
             } else {
               this.myAnswer.question = this.object;
@@ -353,6 +378,7 @@ export class LoadImgComponent implements OnInit {
         );
 
     }
+
     ngOnInit() {
       this.testType = 'person';
       this.d = new Date();
@@ -369,4 +395,5 @@ export class LoadImgComponent implements OnInit {
         finalRandomArray = shuffle(originalArray);
         return finalRandomArray;
     }
+
 }
