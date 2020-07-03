@@ -180,7 +180,7 @@ export class LoadImgComponent implements OnInit {
   onSubmit() {
     // debugger
 
-    if (this.counter < 52) {
+    if (this.counter < 51) {
       this.myAnswer = new Answer();
       this.myAnswer.id = this.counter;
       if (this.testType === 'person') {
@@ -277,7 +277,7 @@ export class LoadImgComponent implements OnInit {
       console.log('all done');
     }
 
-    if (this.counter > 0) {
+    if (this.counter > 1) {
       this.showPrevious = true;
     } else {
       this.showPrevious = false;
@@ -318,7 +318,7 @@ export class LoadImgComponent implements OnInit {
     } else { // not first card
       this.counter = this.counter + 1;
       // console.log('in else counter = ' + this.counter);
-      if (this.counter >= 52) {
+      if (this.counter >= 53) {
         this.showNext = false;
         this.showPrevious = false;
       } else {
@@ -376,8 +376,21 @@ export class LoadImgComponent implements OnInit {
 
   shuffleCards(originalArray: Array<CardInfo>) {
     let finalRandomArray = new Array<CardInfo>();
+    const realFinalArray = new Array<CardInfo>();
+
     finalRandomArray = shuffle(originalArray);
+
+    // for (var i = 0; i <= finalRandomArray.length; i++) {
+    //   realFinalArray[i + 1] = finalRandomArray[i];
+    //   console.log(i);
+    // }
+    //
+    //
+    console.log(finalRandomArray);
+    // console.log(realFinalArray);
     return finalRandomArray;
   }
+
+
 
 }
