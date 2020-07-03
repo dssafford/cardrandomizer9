@@ -134,18 +134,31 @@
     text-align: center !important;
     margin-top: 2px;
     margin-bottom: 1px;
+    padding-left: 8px;
   }
-  .justbutton-nextprevious {
+  .justbutton-next {
     //border-top: 1px solid #b9b9b9;
-    -ms-flex-align: end;
     line-height: 20px;
-    width: 110px !important;
+    width: 70px !important;
     height: 20px !important;
     padding-top: 0;
     vertical-align: top;
-    text-align: left !important;
+    text-align: center !important;
     margin-top: 2px;
     margin-bottom: 1px;
+    padding-left: 3px;
+  }
+  .justbutton-previous {
+    //border-top: 1px solid #b9b9b9;
+    line-height: 20px;
+    width: 95px !important;
+    height: 20px !important;
+    padding-top: 0;
+    vertical-align: top;
+    text-align: center !important;
+    margin-top: 2px;
+    margin-bottom: 1px;
+    padding-left: 3px;
   }
   .justbutton-showinfo {
     //border-top: 1px solid #b9b9b9;

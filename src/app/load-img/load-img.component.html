@@ -56,7 +56,7 @@
               color="accent"
               type="button"
               (click)="goPrevious()"
-              class="justbutton-nextprevious">
+              class="justbutton-previous">
         Previous Card
       </button>
       <button *ngIf="showNext && !firstCard"
@@ -64,7 +64,7 @@
               color="primary"
               type="button"
               (click)="goNext()"
-              class="justbutton-nextprevious">
+              class="justbutton-next">
         Next Card
       </button>
       <button *ngIf="firstCard && showNext"
@@ -75,16 +75,13 @@
               class="justbutton">
         First Card
       </button>
-<!--      <hr>-->
 
-<!--      <p align="center">{{myTimer}}</p>-->
-    </div>
+<!--    </div>-->
 
-    <div align="center">
-    <form (ngSubmit)="onSubmit()" #myForm="ngForm" >
+    <div align="center" >
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <mat-form-field>
-        <input matInput class="shit"
-               size="20"
+        <input matInput
                [(ngModel)]="enteredAnswer"
                name="dude"
                required
@@ -93,8 +90,8 @@
                tabindex="0"/>
       </mat-form-field>
 
-      <button mat-button type="submit">Submit</button>
-    </form>
+   </form>
+    </div>
 <!--      <h2 mat-dialog-title>Reset All?</h2>-->
 <!--      <mat-dialog-content>This will reset all elements.</mat-dialog-content>-->
 <!--      <mat-dialog-actions>-->
@@ -104,7 +101,9 @@
 <!--      </mat-dialog-actions>-->
 
 <!--      <button mat-raised-button (click)="openDialog()" color="primary" name="dudebutton">Confirm box</button>-->
-            <button *ngIf="showReset"
+      <button mat-raised-button type="submit" class="justbutton-noborder">Submit</button>
+
+      <button *ngIf="showReset"
                     mat-button
                     type="button"
                     (click)="openDialog()"
