@@ -114,13 +114,13 @@
   .timerbutton {
     //border-top: 1px solid #b9b9b9;
     line-height: 20px;
-    width: 10px !important;
+    //width: 30px !important;
     height: 20px !important;
     padding-top: 0;
     vertical-align: top;
-    text-align: center !important;
-    margin-right: 1px !important;
-    margin-left: 1px !important;
+    //text-align: left !important;
+    margin-right: 5px !important;
+    margin-left: 5px !important;
     //margin-top: 2px;
     //margin-bottom: 1px;
   }
@@ -183,5 +183,5 @@
     vertical-align: top;
     color: grey;
     font-size: 20px;
-    width: 200px;
+    width: 180px;
   }

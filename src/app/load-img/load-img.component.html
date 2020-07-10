@@ -35,14 +35,18 @@
           <div>
             <p align="center" style="color:red;font-size: 20px;width: 150px;height: 10px;padding-left: 20px">Timer Controls<br></p>
               <div align="left">
-          <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="timerbutton">Start</button>
+<!--          <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="timerbutton">Start</button>-->
+<!--&lt;!&ndash;            <br>&ndash;&gt;-->
+<!--          <button mat-flat-button type="button" color="accent" (click)="onStopTimer()" class="timerbutton">End</button>-->
+<!--&lt;!&ndash;            <br>&ndash;&gt;-->
+<!--                  <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="timerbutton">Reset</button>-->
 <!--            <br>-->
-          <button mat-flat-button type="button" color="accent" (click)="onStopTimer()" class="timerbutton">End</button>
-<!--            <br>-->
-                  <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="timerbutton">Reset</button>
-<!--            <br>-->
+                <button  mat-flat-button  color="primary" class="timerbutton" (click)='startTimer()' style="width: 80px">{{timerStartButtonName}}</button>
+                <button  mat-flat-button  color="accent" class="timerbutton" style="padding-left: 12px;width: 80px" (click)='pauseTimer()'>Pause</button>
+<!--                <p>{{timeLeft}} Seconds ....</p>-->
+                <p align="center" class="pclass">{{message}}</p>
 <!--            <button mat-raised-button type="button" (click)="onSaveWrongs()" class="timerbutton">Save Wrong Answers</button>-->
-             <p align="center" class="pclass" >{{myTimer}}</p>
+<!--             <p align="center" class="pclass" >{{myTimer}}</p>-->
             </div>
           </div>
         </mat-radio-group>

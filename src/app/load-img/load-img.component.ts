@@ -53,7 +53,8 @@ export class LoadImgComponent implements OnInit {
   showAnswerInput = false;
   myWrongs: Answer[] = [];
   newWrongs: WrongAnswer[] = [];
-
+  timerStartButtonName = 'Start';
+  timerStarted = false;
   newWrongLength = 0;
 
   intervalStartTime = 0;
@@ -75,9 +76,17 @@ export class LoadImgComponent implements OnInit {
   ticks = 0;
   timer = timer(2000, 1000);
   dude: number;
-  timerStarted = false;
+  isTimerStarted = false;
   testType: string;
   title = 'angular-confirmation-dialog';
+  name = 'Angular 6';
+  timeLeft = 1;
+  newTime: string;
+  newTimeNumber = 0;
+  interval;
+  message: string;
+  myMinutes: any;
+  mySeconds: any;
 
   pao(inputString: string): void {
     if (inputString === 'person') {
@@ -391,6 +400,47 @@ export class LoadImgComponent implements OnInit {
     return finalRandomArray;
   }
 
+
+  startTimer() {
+    this.timerStartButtonName = 'Running';
+    if(!this.isTimerStarted) {
+      this.isTimerStarted = true;
+      this.interval = setInterval(() => {
+        if (this.timeLeft > 0) {
+          this.timeLeft++;
+          this.showNewTime();
+        } else {
+          this.timeLeft = 0;
+        }
+      }, 1000);
+    } else {
+      this.timerStartButtonName = 'Running';
+    }
+  }
+  showNewTime() {
+    // console.log('timeleft=' + this.timeLeft);
+
+    if (this.timeLeft <= 60) {
+      this.newTime = this.timeLeft.toString();
+    } else {
+      this.newTime = (this.timeLeft / 60).toString() + 'minutes and ' + this.timeLeft.toString() + ' seconds';
+    }
+    this.myMinutes = (parseInt(String(this.timeLeft / 60), 10));
+    this.mySeconds = this.timeLeft%60;
+    // this.message = this.myMinutes + ' minutes' + (this.mySeconds ? ' and ' + this.mySeconds + ' seconds' : '');
+    if(this.mySeconds<10){
+      this.message = this.myMinutes + ':0' + (this.mySeconds);
+    } else {
+      this.message = this.myMinutes + ':' + (this.mySeconds);
+    }
+
+    // console.log(this.newTime);
+  }
+  pauseTimer() {
+    this.timerStartButtonName = 'Restart';
+    this.isTimerStarted = false;
+    clearInterval(this.interval);
+  }
 
 
 }
