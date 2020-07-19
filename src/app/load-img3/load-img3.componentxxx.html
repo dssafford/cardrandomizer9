@@ -1,0 +1,165 @@
+<div class="dougexample-container">
+  <h1>
+    3 Cards
+  </h1>
+  <button
+    mat-raised-button
+    color="warn"
+    type="button"
+    (click)="doshow()"
+    class="justbutton-showinfo">
+    {{showButton}}
+  </button>
+  <mat-card align="center" class="card-wrapper">
+    <div class="card-container">
+      <div class="more-info">
+        <div class="container">
+          <img class="imgA1" style="width: 175px; height: 225px" src={{imgsrc1}}>
+          <img class="imgB1" style="width: 175px; height: 225px" src={{imgsrc2}}>
+          <img class="imgC1" style="width: 175px; height: 225px" src={{imgsrc3}}>
+        </div>
+        <!--          <button *ngIf="showImage"-->
+
+        <div *ngIf=showPerson class="more-info__label">
+          <label *ngIf=showPerson class="label-showinfo">Person = {{person}}</label>
+          <label *ngIf=showAction>Action = {{action}}</label>
+          <label *ngIf=showObject>Object = {{object}}</label>
+        </div>
+        <!--          <hr>-->
+        <!--            <label>{{myTimer}}</label>-->
+        <!--      </div>-->
+        <!--      <div class="card-container__image">-->
+        <!--        <img *ngIf="firstCard" src={{bkgsrc}}>-->
+        <!--        <img *ngIf="showImage && !firstCard" src={{imgsrc}}>-->
+        <!--      </div>-->
+
+        <!--      <div class="card-container__image">-->
+        <!--        <img src={{bkgsrc}}>-->
+        <!--      <div>-->
+        <!--        <div class="a">-->
+        <!--          <div class="container">-->
+        <!--      <img class="imgA1"  style="width: 175px; height: 225px" src={{imgsrc1}}>-->
+        <!--      <img class="imgB1" style="width: 175px; height: 225px" src={{imgsrc2}}>-->
+        <!--      <img class="imgC1" style="width: 175px; height: 225px" src={{imgsrc3}}>-->
+        <!--          </div>-->
+        <!--        </div>-->
+      </div>
+
+      <!--        <img style="border: 1px; position: relative " src={{imgsrc1}}>-->
+      <!--        <img style="border: 1px; position: relative; z-index: 2;" src={{imgsrc2}}>-->
+      <!--        <img style="border: 1px; position: relative; z-index: 1; top: -12px; left: 12px" src={{imgsrc3}}>-->
+
+      <mat-radio-group [(ngModel)]="testType">
+        <label class="counter">Counter= {{counter + 1}}</label>
+        <mat-radio-button value="person" (click)="pao('person')">Person</mat-radio-button>
+        <mat-radio-button value="action" (click)="pao('action')">Action</mat-radio-button>
+        <mat-radio-button value="object" (click)="pao('object')">Object</mat-radio-button>
+        <div>
+          <p align="center" style="color:red;font-size: 20px;width: 150px;height: 10px;padding-left: 20px">Timer
+            Controls<br></p>
+          <div align="left">
+            <!--          <button mat-flat-button type="button" color="primary" (click)="onStartTimer()" class="timerbutton">Start</button>-->
+            <!--&lt;!&ndash;            <br>&ndash;&gt;-->
+            <!--          <button mat-flat-button type="button" color="accent" (click)="onStopTimer()" class="timerbutton">End</button>-->
+            <!--&lt;!&ndash;            <br>&ndash;&gt;-->
+            <!--                  <button mat-flat-button type="button" color="accent" (click)="onResetTimer()" class="timerbutton">Reset</button>-->
+            <!--            <br>-->
+            <button mat-flat-button color="primary" class="timerbutton" (click)='startTimer()'
+                    style="width: 80px">{{timerStartButtonName}}</button>
+            <button mat-flat-button color="accent" class="timerbutton" style="padding-left: 12px;width: 80px"
+                    (click)='pauseTimer()'>Pause
+            </button>
+            <!--                <p>{{timeLeft}} Seconds ....</p>-->
+            <p align="center" class="pclass">{{message}}</p>
+            <!--            <button mat-raised-button type="button" (click)="onSaveWrongs()" class="timerbutton">Save Wrong Answers</button>-->
+            <!--             <p align="center" class="pclass" >{{myTimer}}</p>-->
+          </div>
+        </div>
+      </mat-radio-group>
+
+    </div>
+
+
+    <div>
+      <button *ngIf="showPrevious"
+              mat-raised-button
+              color="accent"
+              type="button"
+              (click)="goPrevious()"
+              class="justbutton-previous">
+        Previous Card
+      </button>
+      <button *ngIf="showNext && !firstCard"
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="goNext()"
+              class="justbutton-next">
+        Next Card
+      </button>
+      <button *ngIf="firstCard && showNext"
+              mat-raised-button
+              color="primary"
+              type="button"
+              (click)="goNext()"
+              class="justbutton">
+        First Card
+      </button>
+
+      <!--    </div>-->
+
+      <div align="center">
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+          <mat-form-field>
+            <input matInput
+                   [(ngModel)]="enteredAnswer"
+                   name="dude"
+                   required
+                   autofocus
+                   autocomplete="off"
+                   tabindex="0"/>
+          </mat-form-field>
+
+        </form>
+      </div>
+      <!--      <h2 mat-dialog-title>Reset All?</h2>-->
+      <!--      <mat-dialog-content>This will reset all elements.</mat-dialog-content>-->
+      <!--      <mat-dialog-actions>-->
+      <!--        <button mat-button mat-dialog-close>Cancel</button>-->
+      <!--        &lt;!&ndash; The mat-dialog-close directive optionally accepts a value as a result for the dialog. &ndash;&gt;-->
+      <!--        <button *ngIf="showReset" mat-button [mat-dialog-close]="true" (click)="reset()">Reset</button>-->
+      <!--      </mat-dialog-actions>-->
+
+      <!--      <button mat-raised-button (click)="openDialog()" color="primary" name="dudebutton">Confirm box</button>-->
+      <button mat-raised-button type="submit" class="justbutton-noborder">Submit</button>
+
+      <button *ngIf="showReset"
+              mat-button
+              type="button"
+              (click)="openDialog()"
+              class="justbutton-noborder">
+        Reset
+      </button>
+      <button
+        mat-raised-button
+        type="button"
+        (click)="goFirst()"
+        class="justbutton-noborder">
+        Test
+      </button>
+      <!--      <button mat-raised-button type="button" (click)="onSaveWrongs()" class="justbutton-noborder">Save Wrongs</button>-->
+    </div>
+  </mat-card>
+
+  <mat-card class="d" *ngIf="newWrongLength > 0">
+    <b>Wrong Answers:</b>
+    <br>
+    Correct: Your Answer
+    <ul>
+      <li *ngFor="let myWrong of myWrongs">
+        {{ myWrong.question + ' - ' + myWrong.answer }}
+      </li>
+    </ul>
+    <hr>
+  </mat-card>
+</div>

@@ -26,11 +26,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
 // import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { ConfirmationDialogComponent } from './shared/confirmation-dialog/confirmation-dialog.component';
+import { LoadImg3Component } from './load-img3/load-img3.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoadImgComponent,
-    ConfirmationDialogComponent
+    ConfirmationDialogComponent,
+    LoadImg3Component
   ],
   imports: [HttpClientModule, BrowserModule, BrowserAnimationsModule,
       ReactiveFormsModule, FormsModule, MaterialModule, MatInputModule,

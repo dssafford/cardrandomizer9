@@ -9,6 +9,7 @@
       display: flex;
       margin: 0px;
       justify-content: center;
+      position: relative;
 
       &> div {
         flex: 1;
@@ -20,7 +21,6 @@
         align-items: flex-end;
         text-align: right;
 
-
         .more-info__label {
           display: flex;
           flex-direction: column;
@@ -31,9 +31,9 @@
       .card-container__image {
 
         img {
-          width: 175px;
-          height: 225px;
-          border:3px solid black
+          width: 150px;
+          height: 200px;
+          border:2px solid black
 
         }
       }
@@ -162,6 +162,7 @@
   }
   .justbutton-showinfo {
     //border-top: 1px solid #b9b9b9;
+    alignment: left;
     line-height: 20px;
     width: 100px !important;
     height: 20px !important;
@@ -185,3 +186,8 @@
     font-size: 20px;
     width: 180px;
   }
+  //.a {padding:50px;}
+  .container { position:relative; width: 200px }
+  .imgA1 { position:absolute; top: 0px; left: 280px; z-index: 1; }
+  .imgB1 { position:absolute; top: 0px; left: 320px; z-index: 2; }
+  .imgC1 { position:absolute; top: 0px; left: 360px; z-index: 4; }

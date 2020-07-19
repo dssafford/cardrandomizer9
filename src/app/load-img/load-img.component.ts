@@ -22,16 +22,13 @@ export class LoadImgComponent implements OnInit {
   private confirmationDialogService: any;
 
   imgsrc = ''; // 'assets/images/2_of_hearts.png';
+  imgsrc1 = '';
+  imgsrc2 = '';
+  imgsrc3 = '';
+
   bkgsrc = 'assets/images/bg.jpg';
 
   results: CardInfo[] = CARD_DATA;
-  // card: CardInfo[] = [];
-  // card: CardInfo;
-  // // deck: any = [];
-  // suits: string[] = ['hearts', 'diamonds', 'spades', 'clubs'];
-  // ranks: string[]  = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king'];
-  // deck: number[]  = [52]; // how many total
-  // myIndex: number;
   returndeck: CardInfo[] = new Array<CardInfo>();
   counter: number;
   person: string;
@@ -315,6 +312,44 @@ export class LoadImgComponent implements OnInit {
     this.firstCard = true;
     this.showNext = true;
     this.showPrevious = false;
+
+  }
+
+  goNext3() {
+    if (this.firstCard === true) {
+      this.counter = 0;
+      this.showImage = true;
+      this.showCard();
+      this.firstCard = false;
+    } else { // not first card
+      this.counter = this.counter + 1;
+      // console.log('in else counter = ' + this.counter);
+      if (this.counter >= 53) {
+        this.showNext = false;
+        this.showPrevious = false;
+      } else {
+        this.showImage = true;
+        this.showCard();
+      }
+    }
+
+    if (this.counter > 0) {
+      this.showPrevious = true;
+    } else {
+      this.showPrevious = false;
+    }
+
+    if (this.counter < 51) {
+      this.showNext = true;
+
+    } else if (this.counter >= 52) {
+      this.showNext = false;
+      this.showPrevious = false;
+
+    } else {
+      this.showNext = false;
+    }
+
 
   }
 
