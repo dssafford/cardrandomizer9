@@ -18,3 +18,6 @@ getTestBed().initTestEnvironment(
 const context = require.context('./', true, /\.spec\.ts$/);
 // And load the modules.
 context.keys().map(context);
+
+// Configure Node to use modern OpenSSL provider
+process.env.NODE_OPTIONS = '--openssl-provider';

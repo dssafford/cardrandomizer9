@@ -40,10 +40,10 @@ app.post('/api/user/login', (req, res) => {
 
 
 app.post('/api/enterTest',function(req, res) {
-    //below outputs full response to browser in json format 
-    //console.log(res.json(req.body)); 
+    //below outputs full response to browser in json format
+    //console.log(res.json(req.body));
 
-    //below outputs full response to browser in json format 
+    //below outputs full response to browser in json format
     // console.log(res.json(req.body));
     // dougWrongArray = req.body.myWrongs;
 
@@ -69,7 +69,7 @@ app.post('/api/enterTest',function(req, res) {
         } else {
             console.log('No error saving test to database');
             // res.json({status: 'success'});
-            // res.redirect('/home'); 
+            // res.redirect('/home');
         }
     });
 
@@ -82,10 +82,10 @@ app.post('/api/enterTest',function(req, res) {
 
 // Add the record data to database, from POST on form submit
 app.post('/api/enteranswers',function(req, res) {
-    //below outputs full response to browser in json format 
-    //console.log(res.json(req.body)); 
+    //below outputs full response to browser in json format
+    //console.log(res.json(req.body));
 
-    //below outputs full response to browser in json format 
+    //below outputs full response to browser in json format
     // console.log(res.json(req.body));
 
     // dougTestArray = JSON.stringify(req.body.name);
@@ -125,7 +125,7 @@ app.post('/api/enteranswers',function(req, res) {
         } else {
             console.log('No error saving test to database');
             // res.json({status: 'success'});
-            // res.redirect('/home'); 
+            // res.redirect('/home');
         }
     });
 
